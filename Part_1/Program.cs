@@ -12,10 +12,10 @@ namespace Part_1
 {
     internal class Program
     {
-        static void GetSquare(double a, double b, double c, out double s)
+        static double GetSquare(double a, double b, double c)
         {
             double p = (a + b + c) / 2;
-            s = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
         }
         static void Main(string[] args)
         {
@@ -23,14 +23,12 @@ namespace Part_1
             double a1 = Convert.ToDouble(Console.ReadLine());
             double b1 = Convert.ToDouble(Console.ReadLine());
             double c1 = Convert.ToDouble(Console.ReadLine());
-            double s1;
-            GetSquare(a1, b1, c1, out s1);
+            double s1= GetSquare(a1, b1, c1);
             Console.WriteLine("Введите длину трех сторон второго треугольника");
             double a2 = Convert.ToDouble(Console.ReadLine());
             double b2 = Convert.ToDouble(Console.ReadLine());
             double c2 = Convert.ToDouble(Console.ReadLine());
-            double s2;
-            GetSquare(a2, b2, c2, out s2);
+            double s2=GetSquare(a2, b2, c2);
             Console.WriteLine();
             Console.WriteLine("Площадь первого треугольника = {0:0.00}", s1);
             Console.WriteLine("Площадь второго треугольника = {0:0.00}", s2);
